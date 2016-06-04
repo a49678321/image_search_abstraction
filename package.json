@@ -1,17 +1,18 @@
 {
-  "name": "clementinejs-fcc",
+  "name": "url_shortener",
   "version": "1.0.1",
   "description": "The elegant and lightweight boilerplate for full stack JavaScript.",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/johnstonbl01/clementinejs-fcc"
+    "url": "git+https://github.com/a49678321/url_shortener.git"
   },
-  "homepage": "http://www.clementinejs.com/",
-  "bugs": "https://github.com/johnstonbl01/clementinejs-fcc/issues",
+  "homepage": "https://url-shortener-hackerq.c9users.io",
+  "bugs": {
+    "url": "https://github.com/a4968321/url_shortener/issues"
+  },
   "keywords": [
     "MongoDB",
-    "Mongoose",
     "full stack",
     "Express",
     "Node",
@@ -19,16 +20,13 @@
     "boilerplate"
   ],
   "scripts": {
-  "start": "node server.js"
+    "start": "node server.js"
   },
-  "author": "Blake Johnston",
+  "author": "Michael Huang",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^1.2.0",
     "express": "^4.12.4",
-    "express-session": "^1.11.3",
-    "mongoose": "^4.1.0",
-    "passport": "^0.3.0",
-    "passport-github": "^1.0.0"
-  }
+    "mongoose": "^4.1.0"
+  },
+  "devDependencies": {}
 }
