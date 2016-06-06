@@ -1,33 +1,26 @@
-'use strict';
 
-var express = require('express');
-var routes = require('./app/routes/index.js');
-var mongoose = require('mongoose');
-var passport = require('passport');
-var session = require('express-session');
+//lets require/import the mongodb native drivers.
+var mongodb = require('mongodb');
+var dotenv = require('dotenv');
+//We need to work with "MongoClient" interface in order to connect to a mongodb server.
+var MongoClient = mongodb.MongoClient;
 
-var app = express();
-require('dotenv').load();
-require('./app/config/passport')(passport);
+// Connection URL. This is where your mongodb server is running.
 
-mongoose.connect(process.env.MONGO_URI);
+//(Focus on This Variable)
+var url = process.env.MONGOLAB_URI;
+//(Focus on This Variable)
 
-app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
-app.use('/public', express.static(process.cwd() + '/public'));
-app.use('/common', express.static(process.cwd() + '/app/common'));
+// Use connect method to connect to the Server
+  MongoClient.connect(url, function (err, db) {
+  if (err) {
+    console.log('Unable to connect to the mongoDB server. Error:', err);
+  } else {
+    console.log('Connection established to', url);
 
-app.use(session({
-	secret: 'secretClementine',
-	resave: false,
-	saveUninitialized: true
-}));
+    // do some work here with the database.
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-routes(app, passport);
-
-var port = process.env.PORT || 8080;
-app.listen(port,  function () {
-	console.log('Node.js listening on port ' + port + '...');
+    //Close connection
+    db.close();
+  }
 });
