@@ -3,32 +3,39 @@
 <html>
 
 	<head>
-		<title>Clementine.js - The elegant and lightweight full stack JavaScript boilerplate.</title>
-		
-		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
+		<title>URL shortener</title>
+		<meta charset="utf-8" />
+		<link href="/css/main.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
 	</head>
 
-	<header>
-		<p>Welcome, <span id="display-name"></span>!</p>
-		<a class="menu" href="/profile">Profile</a>
-		<p>|</p>
-		<a class="menu" href="/logout">Logout</a>
-	</header>
-
 	<body>
-		<div class="container">
-			<img src="/public/img/clementine_150.png" />
-			<br />
-			<p class="clementine-text">Clementine.js</p>
+		
+		<h1 style = 'font-family: Roboto Slab'>FreeCodeCamp API Basejump: URL Shortener Microservice</h1>
+		<div class = 'container'>
+		<blockquote>
+			<h2>User stories: </h3>
+			<ul>
+				<li>I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.</li>
+				<li>When I visit that shortened URL, it will redirect me to my original link.</li>
+			</ul>
+			
+		</blockquote>
 		</div>
-	
 		<div class="container">
-			<p>You have clicked the button <span id="click-nbr"></span> times.</p>
-			<br />
-			<div class="btn-container">
-				<button type="submit" class="btn btn-add">CLICK ME!</button>
-				<button class="btn btn-delete">RESET</button>
-			</div>
+			<h3>Example:</h3>
+			<code>https://url-shortener-hackerq.c9users.io/direct_to/https://www.facebook.com</code>
+			<h3>Example output:</h3>
+			<code>{ "original_url":"", "short_url":"" }</code>
+			<h3>Visit the short url:</h3>
+			<code>https://little-url.herokuapp.com/Number from the short_url</code>
+			<h3>Redirect to:</h3>
+			<code>https://www.facebook.com/</code>
 		</div>
 		
 		<script type="text/javascript" src="common/ajax-functions.js"></script>
