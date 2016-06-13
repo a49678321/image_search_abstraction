@@ -22,7 +22,7 @@ mongo.connect(process.env.MONGOLAB_URI,function(err, db){
     	size: 5242880,
     	max: 5000
 	});
-	routes(app,db);
+	//routes(app,db);
 	handle(app,db);
 	var port = process.env.PORT || 8080;
 	app.listen(port, function() {
