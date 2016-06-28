@@ -1,11 +1,9 @@
 'use strict'
 var express = require('express');
 var mongo = require('mongodb').MongoClient;
-var mongoose = require('mongoose');
 var url = require('url');
 var path = require('path');
 var routes = require('./app/routes/index.js');
-var handle = require('./app/common/handle.js');
 var dotenv = require('dotenv').config({
   silent: true
 });

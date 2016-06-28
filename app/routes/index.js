@@ -1,7 +1,5 @@
 'use strict';
 var Search = require('node-bing-api');
-var util = require('util');
-var SearchSchema = require('../routes/search.js');
 module.exports = function (app, db) {
 	var collection = db.collection('search_history');
 	app.get('/',function(req,res){
