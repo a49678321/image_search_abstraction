@@ -1,15 +1,15 @@
 {
-  "name": "url_shortener",
-  "version": "1.0.1",
+  "name": "image_search_abstraction",
+  "version": "1.0.2",
   "description": "The elegant and lightweight boilerplate for full stack JavaScript.",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/a49678321/url_shortener.git"
+    "url": "git+https://github.com/a49678321/image_search_abstraction.git"
   },
-  "homepage": "https://cryptic-escarpment-73013.herokuapp.com/",
+  "homepage": "https://immense-tundra-66578.herokuapp.com/",
   "bugs": {
-    "url": "https://github.com/a4968321/url_shortener/issues"
+    "url": "https://github.com/a4968321/image_search_abstraction/issues"
   },
   "keywords": [
     "MongoDB",
