@@ -1,33 +1,32 @@
 {
-  "name": "image_search_abstraction",
-  "version": "1.0.2",
-  "description": "The elegant and lightweight boilerplate for full stack JavaScript.",
+  "name": "image_search_abstration",
+  "version": "1.0.0",
+  "description": "fcc project",
   "main": "server.js",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "mongodb": "^2.1.18",
+    "node-bing-api": "^2.4.1",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "start": "node server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/a49678321/image_search_abstraction.git"
   },
-  "homepage": "https://immense-tundra-66578.herokuapp.com/",
-  "bugs": {
-    "url": "https://github.com/a4968321/image_search_abstraction/issues"
-  },
   "keywords": [
-    "MongoDB",
-    "full stack",
-    "Express",
-    "Node",
-    "javascript",
-    "boilerplate"
+    "node",
+    "express"
   ],
-  "scripts": {
-    "start": "node server.js"
+  "author": "hackerq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a49678321/image_search_abstraction/issues"
   },
-  "author": "Michael Huang",
-  "license": "MIT",
-  "dependencies": {
-    "dotenv": "^2.0.0",
-    "express": "^4.14.0",
-    "node-bing-api": "^2.4.1"
-  },
-  "devDependencies": {}
+  "homepage": "https://github.com/a49678321/image_search_abstraction#readme"
 }
