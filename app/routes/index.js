@@ -20,7 +20,7 @@ module.exports = function (app, db) {
 	
 
 	app.get('/search/:str',function(req, res) {
-	request.get('http:', {
+	request.get('https://immense-tundra-66578.herokuapp.com/', {
 	  'auth': {
 	    'user': process.env.Username,
 	    'pass': process.env.Password,
