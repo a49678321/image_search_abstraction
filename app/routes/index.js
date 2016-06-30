@@ -1,6 +1,6 @@
 'use strict';
 var Search = require('node-bing-api');
-var request = require('request');
+
 module.exports = function (app, db) {
 	var collection = db.collection('search_history');
 	app.get('/',function(req,res){
