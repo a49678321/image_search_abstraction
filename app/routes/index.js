@@ -1,5 +1,6 @@
 'use strict';
 var Search = require('node-bing-api');
+var request = require('request');
 module.exports = function (app, db) {
 	var collection = db.collection('search_history');
 	app.get('/',function(req,res){
@@ -16,17 +17,18 @@ module.exports = function (app, db) {
 			res.end();
 		});
 	});
-	//var search = new Search(process.env.Bing_Search_API);
+	
 	
 	app.get('/search/:str',function(req, res) {
+		request.get('/search/:str').auth(null, null, true);
 		var str = req.params.str;
 		str = str.replace(/%20/g, ' ');
 		var offset = req.query.offset || 0;
 		collection.insert({'str_search': req.params.str, 'time_search': new Date()});
 		var search = new Search({ accKey: process.env.Bing_Search_API });
 		search.images(str, {top: 5, skip: offset*5}, function(err, respond, body){
-		if(err) throw err;
-		res.send(body.d.results.map(makeList));
+			if(err) throw err;
+			res.send(body.d.results.map(makeList));
 		});
 	});
 	function makeList(img) {
