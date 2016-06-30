@@ -20,7 +20,7 @@ module.exports = function (app, db) {
 	
 	
 	app.get('/search/:str',function(req, res) {
-		request.get('https://immense-tundra-66578.herokuapp.com/').auth(null, null, true);
+		request.get('https://immense-tundra-66578.herokuapp.com/').auth(process.env.Username, process.env.Password);
 		var str = req.params.str;
 		str = str.replace(/%20/g, ' ');
 		var offset = req.query.offset || 0;
