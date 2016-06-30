@@ -20,18 +20,12 @@ module.exports = function (app, db) {
 	
 
 	app.get('/search/:str',function(req, res) {
-	request.get('https://immense-tundra-66578.herokuapp.com/', {
-	  'auth': {
-	    'user': process.env.Username,
-	    'pass': process.env.Password,
-	    'sendImmediately': false
-	  }
-	});
 		var str = req.params.str;
-		str = str.replace(/%20/g, ' ');
 		var offset = req.query.offset || 0;
-		collection.insert({'str_search': req.params.str, 'time_search': new Date()});
 		var search = new Search({ accKey: process.env.Bing_Search_API });
+		
+		str = str.replace(/%20/g, ' ');
+		collection.insert({'str_search': req.params.str, 'time_search': new Date()});
 		search.images(str, {top: 5, skip: offset*5}, function(err, respond, body){
 			if(err) throw err;
 			res.send(body.d.results.map(makeList));
