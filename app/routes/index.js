@@ -19,7 +19,7 @@ module.exports = function (app, db) {
 	});
 	
 
-	app.get('https://immense-tundra-66578.herokuapp.com/search/:str',function(req, res) {
+	app.get('/search/:str',function(req, res) {
 		var str = req.params.str;
 		var offset = req.query.offset || 0;
 		var search = new Search({ accKey: process.env.Bing_Search_API });
