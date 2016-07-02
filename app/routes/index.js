@@ -24,22 +24,12 @@ module.exports = function (app, db) {
 		var offset = req.query.offset || 0;
 		var search = new Search({ accKey: process.env.Bing_Search_API });
 		str = str.replace(/%20/g, ' ');
-		request({
-		  url: "https://immense-tundra-66578.herokuapp.com/search/"+ str,
-		  method: "GET"
-		  /*headers: {
-				'Authorization': 'Client-ID ad4de0bf-47c8-4bf5-8619-66c542449c0b'
-			},*/
-		}, function(error, response, body) {
-		if (!error && response.statusCode == 200){
 		collection.insert({'str_search': req.params.str, 'time_search': new Date()});
 		search.images(str, {top: 5, skip: offset*5}, function(err, respond, body){
 			if(err) throw err;
 				res.send(body.d.results.map(makeList));
 			});
-			res.end(body);
-		}
-	});
+		res.end();
 	});
 	function makeList(img) {
 	// Construct object from the json result
