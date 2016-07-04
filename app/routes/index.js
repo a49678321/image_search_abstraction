@@ -27,7 +27,7 @@ module.exports = function (app, db) {
 		collection.insert({'str_search': req.params.str, 'time_search': new Date()});
 		search.images(str, {top: 5, skip: offset*5}, function(err, respond, body){
 			if(err) throw err;
-			res.end(body.d.results.map(makeList));
+			res.send('hello world');
 			});
 	});
 	function makeList(img) {
